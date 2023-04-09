@@ -1,5 +1,8 @@
 package edu.oscar.herrera.reto10.process;
 
+/**
+ * Esta es la clase base para la creacion de empleados
+ */
 public abstract class Empleado {
 
     //Atributos
@@ -9,10 +12,21 @@ public abstract class Empleado {
     private int numeroTelefono;
     private int numeroSeguroSocial;
 
-    //Constructores
+    /**
+     * Este es el constructor default del objeto Empleado
+     */
     public Empleado() {
     }
 
+    /**
+     * Este es el constructor completo del objeto empleado
+     *
+     * @param nombre El nombre del empleado
+     * @param apellido El apellido del empleado
+     * @param edad La edad del empleado
+     * @param numeroTelefono El número de teléfono del empleado
+     * @param numeroSeguroSocial El número de seguro social del empleado
+     */
     public Empleado(String nombre, String apellido, int edad, int numeroTelefono, int numeroSeguroSocial) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -21,7 +35,9 @@ public abstract class Empleado {
         this.numeroSeguroSocial = numeroSeguroSocial;
     }
 
-    //Metodos
+    /**
+     * Método abstracto trabajar que será establecido por las clases hijas
+     */
     public abstract void trabajar();
 
 

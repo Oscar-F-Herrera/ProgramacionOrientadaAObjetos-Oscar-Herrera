@@ -2,7 +2,13 @@ package edu.oscar.herrera.reto10.ui;
 
 import edu.oscar.herrera.reto10.process.*;
 
+/**
+ * En esta clase se crean varios objetos y se imprimen los métodos
+ */
 public class CLI {
+    /**
+     * Este método crea objetos y llama a los métodos restantes
+     */
     public static void mostrarMenu(){
         JrEngineer jr1 = new JrEngineer("A", "Z", 20, 12345678, 97315438, "Java, C#");
         SrEnginner sr1 = new SrEnginner("B", "Y", 32, 87654321, 8357435, "PHP, C++, C, Java, C#", 5);
@@ -26,6 +32,9 @@ public class CLI {
         testInterviewer(sr1);
     }
 
+    /**
+
+     */
     public static void testEmpleado(Object object){
         if (object instanceof Empleado){
             System.out.println("El objeto es un empleado");
@@ -34,6 +43,10 @@ public class CLI {
         }
     }
 
+    /**
+     * Este método verifica si el objeto introducido es un programador
+     * @param object El objeto a evaluar
+     */
     public static void testProgrammer(Object object){
         if (object instanceof Programmer){
             System.out.println("El empleado es un programador");
@@ -42,6 +55,10 @@ public class CLI {
         }
     }
 
+    /**
+     * Este método verifica si el objeto introducido es un entrevistador
+     * @param object El objeto a evaluar
+     */
     public static void testInterviewer(Object object){
         if (object instanceof Interviewer){
             System.out.println("El empleado es un entrevistador");

@@ -1,5 +1,7 @@
 package edu.oscar.herrera.reto11.process;
 
+import java.util.Objects;
+
 /**
  * Esta es la clase base para la creacion de empleados
  */
@@ -45,7 +47,18 @@ public abstract class Empleado {
         return this.getClass().getSimpleName() + ";" + this.nombre + ";" + this.apellido + ";" + this.edad + ";" + this.numeroTelefono + ";" + this.numeroSeguroSocial;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Empleado empleado = (Empleado) o;
+        return edad == empleado.edad && numeroTelefono == empleado.numeroTelefono && numeroSeguroSocial == empleado.numeroSeguroSocial && Objects.equals(nombre, empleado.nombre) && Objects.equals(apellido, empleado.apellido);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, apellido, edad, numeroTelefono, numeroSeguroSocial);
+    }
 
     //Getters y Setters
     public String getNombre() {

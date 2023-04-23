@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class CLI {
     /**
-     * Este método crea objetos y llama a los métodos restantes
+     * Este método crea inges y llama a otros métodos
      */
     public static void mostrarMenu(){
         //Guardar Inges en el archivo de texto
@@ -63,6 +63,10 @@ public class CLI {
         imprimirMayorA20(segundaLista);
     }
 
+    /**
+     * Este método imprime al empleado si su edad es mayor a 20
+     * @param lista La lista de empleados
+     */
     public static void imprimirMayorA20(ArrayList<String> lista){
         for (String empleado : lista) {
             String[] atributos = empleado.split(";");

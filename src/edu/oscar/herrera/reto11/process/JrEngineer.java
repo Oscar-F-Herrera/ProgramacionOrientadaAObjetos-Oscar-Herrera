@@ -2,6 +2,8 @@ package edu.oscar.herrera.reto11.process;
 
 import edu.oscar.herrera.reto11.ui.Programmer;
 
+import java.util.Objects;
+
 /**
  * Esta es la clase base de los objetos de tipo JrEngineer, hereda de la clase empleado e implementa la interfaz programmer
  */
@@ -48,6 +50,20 @@ public class JrEngineer extends Empleado implements Programmer {
     @Override
     public String toString(){
         return super.toString() + ";" + this.lenguajesConocidos + ";" + this.rFC;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        JrEngineer that = (JrEngineer) o;
+        return Objects.equals(lenguajesConocidos, that.lenguajesConocidos) && Objects.equals(rFC, that.rFC);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), lenguajesConocidos, rFC);
     }
 
     //Getters y Setters
